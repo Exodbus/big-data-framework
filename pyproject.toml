@@ -1,7 +1,7 @@
 [project]
 name = "big-data-framework"
 version = "0.1.0"
-description = "Add your description here"
+description = "Random users and orders dataset generator"
 readme = "README.md"
 authors = [
     { name = "Exodbus", email = "affile.corentin@gmail.com" }
