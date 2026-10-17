@@ -1,6 +1,5 @@
-{{ config(severity='warn') }}
-
--- A user cannot order before being born: the test fails if this query returns rows
+-- A user cannot order before being born: the test fails if this query returns rows.
+-- Invalid birthdates are nulled in stg_users, so this test must now pass.
 select
     o.order_id,
     o.ordered_at,

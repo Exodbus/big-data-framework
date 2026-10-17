@@ -21,6 +21,16 @@ models:
           - accepted_values:
               arguments:
                 values: ["F", "M"]
+      - name: birthdate
+        description: Birthdate of the user, NULL when it is later than the first order.
+      - name: birthdate_is_valid
+        description: True when the original birthdate is present and not later than the first order.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+                quote: false
       - name: state
         description: Two letters code of the state, territory or military region.
         data_tests:
