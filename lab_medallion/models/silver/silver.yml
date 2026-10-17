@@ -44,14 +44,22 @@ models:
               arguments:
                 to: ref('stg_users')
                 field: user_id
-      - name: quantity
+      - name: ordered_at
+        description: Timestamp of the order, in UTC.
         data_tests:
+          - not_null
+      - name: quantity
+        description: Number of items ordered, strictly positive.
+        data_tests:
+          - not_null
+          - positive
           - accepted_values:
               arguments:
                 values: [1, 2, 3, 4, 5]
                 quote: false
       - name: product
         data_tests:
+          - not_null
           - accepted_values:
               arguments:
                 values: ["bread", "brioche", "cookie", "croissant", "donut", "drink"]
