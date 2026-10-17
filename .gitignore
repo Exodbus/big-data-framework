@@ -10,3 +10,4 @@ dbt_packages/
 logs/
 *.duckdb
 .user.yml
+!lab_medallion/seeds/*.csv
