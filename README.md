@@ -22,3 +22,4 @@ Each lab has its own branch. The `main` branch contains all the labs merged.
 | Lab 2 – Object storage with S3 | [`lab-2-s3`](https://github.com/Exodbus/big-data-framework/tree/lab-2-s3) | Kubernetes Job `job-upload-bronze.yaml`, answers in [`docs/lab-2-s3.md`](docs/lab-2-s3.md) |
 | Lab 3 – SQL analytics with DuckDB | [`lab-3-duckdb`](https://github.com/Exodbus/big-data-framework/tree/lab-3-duckdb) | `orders-report` command, answers in [`docs/lab-3-duckdb.md`](docs/lab-3-duckdb.md) |
 | Lab 4 – Spark RDD API | [`lab-4-pyspark-rdd`](https://github.com/Exodbus/big-data-framework/tree/lab-4-pyspark-rdd) | answers in [`docs/lab-4-pyspark-rdd.md`](docs/lab-4-pyspark-rdd.md) |
+| Lab 5 – Bronze to silver with Spark DataFrames | [`lab-5-pyspark-silver`](https://github.com/Exodbus/big-data-framework/tree/lab-5-pyspark-silver) | Iceberg metadata in `warehouse/`, answers in [`docs/lab-5-pyspark-silver.md`](docs/lab-5-pyspark-silver.md) |
