@@ -70,3 +70,21 @@ No credential vending, so the analyst has the S3A keys. He can still write throu
 ## Commit the Iceberg table metadata
 
 `aws s3 sync --delete` skipped `orders/metadata/version-hint.text` (same size, `3` locally). I copied it by hand.
+
+## Exercises
+
+### 1. Drop `country`
+
+`DROP COLUMN country` wrote `00002-9efad1c5-...metadata.json`. Still one snapshot (`5945523599685035420`), no data file
+rewritten. It's a metadata operation: Iceberg tracks columns by ID, so the Parquet files stay as they are and the column
+is just no longer read.
+
+### 2. `silver_reader`
+
+Catalog role `silver_reader` with `NAMESPACE_READ_PROPERTIES`, `TABLE_LIST`, `TABLE_READ_PROPERTIES` and
+`TABLE_READ_DATA`, granted on the `silver` namespace only. Test principal `silver_user`, principal role
+`silver_analyst`. As `dev`, I created `gold.orders_by_product`.
+
+As `silver_user`, `SHOW TABLES IN polaris.silver` lists `orders` and `users`, and `silver.orders` returns 2829 rows.
+`gold.orders_by_product` fails with `not authorized for op LOAD_TABLE`. `SHOW NAMESPACES IN polaris` fails too
+(`LIST_NAMESPACES`): listing the catalog root needs a catalog-level grant, and `silver_reader` has none.
