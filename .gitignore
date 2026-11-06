@@ -11,3 +11,4 @@ logs/
 *.duckdb
 .user.yml
 !lab_medallion/seeds/*.csv
+polaris/deployment/charts/
